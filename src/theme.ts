@@ -1,9 +1,8 @@
 import {createContext, useState, useMemo, FC} from "react";
 import {createTheme} from "@mui/material";
 
-// color design tokens
 
-export let tokens = (mode: string) => ({
+export const tokens = (mode: string) => ({
     ...(mode === "dark" ? {
         grey: {
             50: "#f9fafb",
@@ -52,10 +51,21 @@ export let tokens = (mode: string) => ({
             700: "#15803d",
             800: "#166534",
             900: "#14532d",
+        },
+        blueAccent: {
+            50: "#eff6ff",
+            100: "#dbeafe",
+            200: "#bfdbfe",
+            300: "#93c5fd",
+            400: "#60a5fa",
+            500: "#3b82f6",
+            600: "#2563eb",
+            700: "#1d4ed8",
+            800: "#1e40af",
+            900: "#1e3a8a",
         }
         } : {
         grey: {
-            // inverse
             50: "#111827",
             100: "#1f2937",
             200: "#374151",
@@ -68,7 +78,6 @@ export let tokens = (mode: string) => ({
             900: "#f9fafb",
         },
         primary: {
-            // inverse
             50: "#312e81",
             100: "#3730a3",
             200: "#4338ca",
@@ -81,7 +90,6 @@ export let tokens = (mode: string) => ({
             900: "#eef2ff",
         },
         redAccent: {
-            // inverse
             50: "#831843",
             100: "#9d174d",
             200: "#be185d",
@@ -94,7 +102,6 @@ export let tokens = (mode: string) => ({
             900: "#fdf2f2",
         },
         greenAccent: {
-            // inverse
             50: "#14532d",
             100: "#166534",
             200: "#15803d",
@@ -105,13 +112,21 @@ export let tokens = (mode: string) => ({
             700: "#bbf7d0",
             800: "#dcfce7",
             900: "#f0fdf4",
+        },
+        blueAccent: {
+            50: "#0d2e4e",
+            100: "#0e3a5e",
+            200: "#0e4a7b",
+            300: "#0e5a94",
+            400: "#0e6ba8",
+            500: "#0e7bc0",
+            600: "#0e8bc9",
+            700: "#0e9bd3",
+            800: "#0ea9db",
+            900: "#0eb9e6",
         }
     })
 });
-
-// mui theme settings
-//set type for color
-
 
 export const themeSettings = (mode: string) => {
 
@@ -133,7 +148,7 @@ export const themeSettings = (mode: string) => {
                     light: colors.grey[300]
                 },
                 background: {
-                    default: colors.primary[500],
+                    default: colors.grey[900],
                 }
             }:{
                 primary: {
