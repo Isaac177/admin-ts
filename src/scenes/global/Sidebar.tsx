@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ProSidebar, Menu, MenuItem} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {Box, Typography, useTheme} from "@mui/material";
-import {tokens} from "../../theme";
+import {tokens} from "../../theme/theme";
 import {Link} from "react-router-dom";
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import IconButton from "@mui/material/IconButton";
@@ -105,7 +105,6 @@ const Sidebar: FC = () => {
                                     alt="profile-user"
                                     width="100px"
                                     height="100px"
-                                    //avatar profile img
                                     src="https://i.pravatar.cc/150?img=32"
                                     style={{ cursor: "pointer", borderRadius: "50%" }}
                                 />

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import {Box, IconButton, useTheme} from "@mui/material";
-import {ColorModeContext, tokens} from "../../theme";
+import {ColorModeContext, tokens} from "../../theme/theme";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';

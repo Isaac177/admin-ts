@@ -1,4 +1,4 @@
-import {createContext, useState, useMemo, FC} from "react";
+import {createContext, useState, useMemo} from "react";
 import {createTheme} from "@mui/material";
 
 
@@ -198,22 +198,11 @@ export const themeSettings = (mode: string) => {
     }
 };
 
-// context for color mode
 
 export const ColorModeContext = createContext({
     toggleColorMode:() => {}
 });
 
-// theme provider with typescript
-
-/*export const useMode: () => { mode: string; toggleColorMode: () => void; } = () => {
-    const [mode, setMode] = useState("dark");
-    const toggleColorMode = () => {
-        const newMode = mode === "dark" ? "light" : "dark";
-        setMode(newMode);
-    };
-    return {mode, toggleColorMode};
-}*/
 
 export const useMode: () => { colorMode: { toggleColorMode: () => void }; theme: any } = () => {
     const [mode, setMode] = useState("dark");
