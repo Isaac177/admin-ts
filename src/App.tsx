@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {ColorModeContext, useMode} from "./theme";
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import Topbar from "./scenes/global/Topbar";
 
-function App() {
-  return (
-    <div className="app">
-      <h1>Hi there</h1>
-    </div>
+
+const App:FC = () => {
+    const {theme, colorMode} = useMode();
+    return (
+    <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div className="app">
+                <main className="content">
+                    <Topbar />
+                </main>
+            </div>
+        </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 

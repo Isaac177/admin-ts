@@ -1,9 +1,9 @@
-import {createContext, useState, useMemo} from "react";
+import {createContext, useState, useMemo, FC} from "react";
 import {createTheme} from "@mui/material";
 
 // color design tokens
 
-export const tokens = (mode: string) => ({
+export let tokens = (mode: string) => ({
     ...(mode === "dark" ? {
         grey: {
             50: "#f9fafb",
@@ -108,3 +108,111 @@ export const tokens = (mode: string) => ({
         }
     })
 });
+
+// mui theme settings
+//set type for color
+
+
+export const themeSettings = (mode: string) => {
+
+    const colors = tokens(mode);
+
+    return {
+        palette: {
+            mode: mode,
+            ...(mode === "dark" ? {
+                primary: {
+                    main: colors.primary[500]
+                },
+                secondary: {
+                    main: colors.greenAccent[500]
+                },
+                neutral: {
+                    dark: colors.grey[900],
+                    main: colors.grey[500],
+                    light: colors.grey[300]
+                },
+                background: {
+                    default: colors.primary[500],
+                }
+            }:{
+                primary: {
+                    main: colors.primary[100]
+                },
+                secondary: {
+                    main: colors.greenAccent[500]
+                },
+                neutral: {
+                    dark: colors.grey[700],
+                    main: colors.grey[500],
+                    light: colors.grey[300]
+                },
+                background: {
+                    default: '#fcfcfc',
+                }
+            })
+        },
+        typography: {
+            fontFamily: "Inter, sans-serif",
+            fontSize: 12,
+            h1: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "2.5rem",
+            },
+            h2: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "2rem",
+            },
+            h3: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "1.75rem",
+            },
+            h4: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "1.5rem",
+            },
+            h5: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "1.25rem",
+            },
+            h6: {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "1rem",
+            }
+        }
+    }
+};
+
+// context for color mode
+
+export const ColorModeContext = createContext({
+    toggleColorMode:() => {}
+});
+
+// theme provider with typescript
+
+/*export const useMode: () => { mode: string; toggleColorMode: () => void; } = () => {
+    const [mode, setMode] = useState("dark");
+    const toggleColorMode = () => {
+        const newMode = mode === "dark" ? "light" : "dark";
+        setMode(newMode);
+    };
+    return {mode, toggleColorMode};
+}*/
+
+export const useMode: () => { colorMode: { toggleColorMode: () => void }; theme: any } = () => {
+    const [mode, setMode] = useState("dark");
+
+    const colorMode = useMemo(
+        () => ({
+            toggleColorMode: () => {
+                setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
+            }
+        }),
+        []);
+    // @ts-ignore
+    const theme = createTheme(themeSettings(mode));
+    return { theme, colorMode };
+}
+
+
