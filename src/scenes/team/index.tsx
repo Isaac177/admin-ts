@@ -43,7 +43,7 @@ const Team: React.FC = () => {
             headerName: "Access Level",
             flex: 1,
 
-            renderCell:(access: any) => {
+            renderCell:({row: {access}}: any ) => {
                 return (
                     <Box
                         sx={{
@@ -85,15 +85,15 @@ const Team: React.FC = () => {
                         color: colors.greenAccent[300],
                     },
                     "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: colors.blueAccent[700],
+                        backgroundColor: colors.blueAccent[900],
                         borderBottom: "none",
                     },
                     "& .MuiDataGrid-virtualScroller": {
-                        backgroundColor: colors.primary[400],
+                        backgroundColor: colors.primary[900],
                     },
                     "& .MuiDataGrid-footerContainer": {
                         borderTop: "none",
-                        backgroundColor: colors.blueAccent[700],
+                        backgroundColor: colors.blueAccent[900],
                     },
                     "& .MuiCheckbox-root": {
                         color: `${colors.greenAccent[200]} !important`,

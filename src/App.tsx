@@ -2,10 +2,11 @@ import React, {FC} from 'react';
 import {ColorModeContext, useMode} from "./theme/theme";
 import {CssBaseline, ThemeProvider} from "@mui/material";
 import Topbar from "./scenes/global/Topbar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Dashboard from "./scenes/dashboard";
 import Sidebar from './scenes/global/Sidebar';
 import Team from "./scenes/team/index";
+import Contacts from "./scenes/contacts/index";
 
 
 const App:FC = () => {
@@ -21,6 +22,7 @@ const App:FC = () => {
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/team" element={<Team />} />
+                        <Route path="/contacts" element={<Contacts />} />
                     </Routes>
                 </main>
             </div>
