@@ -10,6 +10,8 @@ import Contacts from "./scenes/contacts/index";
 import Invoices from "./scenes/invoices/index";
 import Form from "./scenes/form/index";
 import Calendar from "./scenes/calendar/index";
+import Faq from "./scenes/faq/index";
+import Bar from "./scenes/bar/index";
 
 
 const App:FC = () => {
@@ -29,6 +31,8 @@ const App:FC = () => {
                         <Route path="/invoices" element={<Invoices />} />
                         <Route path="/form" element={<Form />} />
                         <Route path="/calendar" element={<Calendar />} />
+                        <Route path="/Faq" element={<Faq />} />
+                        <Route path="/bar" element={<Bar />} />
                     </Routes>
                 </main>
             </div>
