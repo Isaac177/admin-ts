@@ -12,6 +12,7 @@ import Form from "./scenes/form/index";
 import Calendar from "./scenes/calendar/index";
 import Faq from "./scenes/faq/index";
 import Bar from "./scenes/bar/index";
+import Pie from "./scenes/pie/index";
 
 
 const App:FC = () => {
@@ -33,6 +34,7 @@ const App:FC = () => {
                         <Route path="/calendar" element={<Calendar />} />
                         <Route path="/Faq" element={<Faq />} />
                         <Route path="/bar" element={<Bar />} />
+                        <Route path="/pie" element={<Pie />} />
                     </Routes>
                 </main>
             </div>
