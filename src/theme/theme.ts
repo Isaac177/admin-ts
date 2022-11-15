@@ -172,27 +172,27 @@ export const themeSettings = (mode: string) => {
             fontSize: 12,
             h1: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "2.5rem",
+                fontSize: "2rem",
             },
             h2: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "2rem",
+                fontSize: "1.5rem",
             },
             h3: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "1.75rem",
+                fontSize: "1rem",
             },
             h4: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "1.5rem",
+                fontSize: "1rem",
             },
             h5: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "1.25rem",
+                fontSize: "0.8rem",
             },
             h6: {
                 fontFamily: "Inter, sans-serif",
-                fontSize: "1rem",
+                fontSize: "0.7rem",
             }
         }
     }

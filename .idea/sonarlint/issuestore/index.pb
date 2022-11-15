@@ -16,7 +16,5 @@ A
 tsconfig.json,6/1/61ebb9fd6e8cf9082658121d5d81e297791dacd0
 F
 src/typings/theme.d.ts,d/3/d343f9d5ac4ff13cb085c47b594ecebcfedcbcb4
-N
-src/scenes/dashboard/index.tsx,9/2/924e77cafa5bd54aa5fc2a5d962bd2411bfa2d9d
 I
 src/scenes/team/index.tsx,4/0/409bdb37ab1892136d59cd5c4322a03ba7f2380f

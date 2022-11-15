@@ -57,6 +57,7 @@ const Sidebar: FC = () => {
             sx={{
             "& .pro-sidebar-inner": {
                 backgroundColor: `${colors.grey[700]} !important`,
+                height: "auto",
             },
             "& .pro-icon-wrapper": {
                 backgroundColor: 'transparent !important',
